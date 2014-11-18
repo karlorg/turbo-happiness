@@ -21,6 +21,7 @@ class Index {
 
 	public static function main() {
 		try {
+			// see http://old.haxe.org/manual/dispatch
 			Dispatch.run(Web.getURI(), Web.getParams(), Index);
 		} catch (de : DispatchError) {
 			switch (de) {
@@ -39,6 +40,7 @@ class Index {
 	}
 
 	private static function initDb() : Void {
+		// see http://old.haxe.org/manual/spod
 		if (dbconn == null) {
 			sys.db.Manager.initialize();
 			dbconn = sys.db.Sqlite.open("test.sqlite");
@@ -94,6 +96,7 @@ class Index {
 
 }
 
+// see http://old.haxe.org/manual/spod
 class TestTable extends sys.db.Object {
 	public var id : SId;
 	public var name : SString<32>;
