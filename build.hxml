@@ -1,0 +1,21 @@
+-cp src
+-dce full
+-main JSMain
+-D noEmbedJS
+-js out/main.js
+
+--next
+
+-cp src
+-dce full
+-resource testpage.mtt@testpage
+-main Index
+-php out
+
+--next
+
+-cp src
+-dce full
+-resource testpage.mtt@testpage
+-main Index
+-neko out/index.n
